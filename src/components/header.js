@@ -14,7 +14,7 @@ const Header = {
       <div>
         <form class="after:clear-both after:table my-[40px] mx-[100px]">
           <input type="text" placeholder="Search.." name="search" class="p-[10px] text-[17px] border border-solid border-grey float-left w-[700px] bg-white">
-          <button class="hover:bg-[#027bc6] float-left w-[100px] p-[10px] bg-[#57d7ff] text-white text-[17px] border border-solid border-grey border-l-none cursor-pointer " type="submit"><i class="fa fa-search"></i></button>
+          <button class="hover:bg-[#027bc6] float-left w-[100px] p-[10px] bg-[#57d7ff] text-white text-[17px] border border-solid border-grey border-l-none cursor-pointer "><i class="fa fa-search"></i></button>
         </form>
       </div>
 
@@ -29,6 +29,7 @@ const Header = {
     <div class="bg-[#027bc6]">
     <ul class="flex list-none">
       <li class="p-[20px] text-white text-[17px] font-bold hover:bg-[#57d7ff]"><a class="block" href="#/">Trang chủ</a></li>
+      <li class="p-[20px] text-white text-[17px] font-bold hover:bg-[#57d7ff]"><a class="block" href="#/products">Sản phẩm</a></li>
       <li class="p-[20px] text-white text-[17px] font-bold hover:bg-[#57d7ff]"><a class="block" href="#/news">Tin tức</a></li>
       <li class="p-[20px] text-white text-[17px] font-bold hover:bg-[#57d7ff]"><a class="block" href="#/admin">Admin </a></li>
       <li class="p-[20px] text-white text-[17px] font-bold hover:bg-[#57d7ff]"><a class="block" href="#/cart">Giỏ hàng</a></li>

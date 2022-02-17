@@ -1,6 +1,7 @@
 import Banner from "../components/banner"
 import Footer from "../components/footer";
 import Header from "../components/header";
+import Posts from "../components/news";
 import Product from "../components/product"
 
 const HomePage = {
@@ -15,8 +16,8 @@ const HomePage = {
             <div id="products">
                 ${ await Product.render()}
             </div>
-            <div id="products">
-                ${ await Product.render()}
+            <div id="news">
+                ${ await Posts.render()}
             </div>
             <div id="footer">
                 ${Footer.render()}

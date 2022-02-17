@@ -1,15 +1,15 @@
 import Footer from "../components/footer"
 import Header from "../components/header"
-import Posts from "../components/news";
+import Product from "../components/product"
 
-const NewsPage = {
+const ProductPage = {
     async render() {
         return /*html*/ `
             <div>
                 ${Header.render()}
             </div>
             <div>
-                ${ await Posts.render()}
+                ${ await Product.render()}
             </div>
             <div>
                 ${Footer.render()}
@@ -18,4 +18,4 @@ const NewsPage = {
     },
 };
 
-export default NewsPage;
+export default ProductPage;

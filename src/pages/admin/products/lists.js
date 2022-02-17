@@ -21,7 +21,7 @@ const listsAdmin = {
     <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
       <div class="overflow-hidden">
       <div class>
-            <a href="#/admin/news/add" class="border p-[10px] rounded-[5px] bg-[#57d7ff] text-[17px] text-white hover:bg-[#027bc6] font-bold"><button>Thêm mới </button></a>
+            <a href="#/admin/products/add" class="border p-[10px] rounded-[5px] bg-[#57d7ff] text-[17px] text-white hover:bg-[#027bc6] font-bold"><button>Thêm mới </button></a>
         </div>
         <table class="min-w-full">
         
@@ -53,7 +53,7 @@ const listsAdmin = {
             <td class="p-[5px]"><img src="${product.img}" width="100"/></td>
             <td>${product.price}</td>
             <td>
-              <a href="/admin/news/${product.id}/edit" class="hover:text-blue-600 mx-[20px]">Edit</a>
+              <a href="/admin/products/${product.id}/edit" class="hover:text-blue-600 mx-[20px]">Edit</a>
               <button data-id=${product.id} class="btn btn-remove hover:text-red-600">Remove</button>
             </td>
           </tr>
