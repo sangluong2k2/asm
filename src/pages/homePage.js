@@ -13,6 +13,9 @@ const HomePage = {
             <div id="banner">
                 ${Banner.render()}
             </div>
+            <div class="w-[1400px] mx-auto border rounded-br-[20px] rounded-tl-[20px] bg-[#57d7ff]">
+               <p class="text-center py-5 font-bold text-[17px] text-white ">SẢN PHẨM HOT</p>
+            </div>
             <div id="products">
                 ${ await Product.render()}
             </div>
