@@ -26,16 +26,36 @@ const Header = {
     </div>
 
     <!-- nav -->
-    <div class="bg-[#027bc6]">
-    <ul class="flex list-none">
+    <div class="bg-[#027bc6] grid grid-cols-2">
+      <div>
+      <ul class="flex list-none">
       <li class="p-[20px] text-white text-[17px] font-bold hover:bg-[#57d7ff]"><a class="block" href="#/">Trang chủ</a></li>
       <li class="p-[20px] text-white text-[17px] font-bold hover:bg-[#57d7ff]"><a class="block" href="#/products">Sản phẩm</a></li>
       <li class="p-[20px] text-white text-[17px] font-bold hover:bg-[#57d7ff]"><a class="block" href="#/news">Tin tức</a></li>
       <li class="p-[20px] text-white text-[17px] font-bold hover:bg-[#57d7ff]"><a class="block" href="#/admin">Admin </a></li>
       <li class="p-[20px] text-white text-[17px] font-bold hover:bg-[#57d7ff]"><a class="block" href="#/cart">Giỏ hàng</a></li>
     </ul>
+      </div>
+
+      <div class="flex list-none ml-[650px]">
+      ${localStorage.getItem('user') ? `
+      <li class="p-[20px] text-white text-[17px] font-bold hover:bg-[#57d7ff]"><a class="block" id="email"> </a></li>
+      <li class="p-[20px] text-white text-[17px] font-bold hover:bg-[#57d7ff]"><a class="block cursor-pointer" id="logout">Logout</a></li>
+  `: ""}
+      </div>
   </div>
         `;
+    },
+
+    afterRender(){
+      const email = document.querySelector('#email');
+      const logout = document.querySelector('#logout');
+      email.innerHTML = JSON.parse(localStorage.getItem('user')).email;
+
+      logout.addEventListener('click', function(){
+          localStorage.removeItem('user');
+          reRender(Header,"header");
+      })
     },
 };
 

@@ -24,6 +24,9 @@ const HomePage = {
             </div>
         `;
     },
+    aferRender(){
+        Header.render();
+    }
 };
 
 export default HomePage;

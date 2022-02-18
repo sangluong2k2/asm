@@ -18,7 +18,14 @@ const addNewProduct = {
               
              
                 <label for="" class="text-[17px] font-bold  mt-[20px]">Ảnh</label> <br>
-                <input type="file" id="image_product" class=" file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0file:text-sm file:font-semibold file:bg-violet-50 file:text-violet-700 hover:file:bg-violet-100 file:cursor-pointer"> <br>
+                <div class="grid grid-cols-2">
+                <div>
+                  <input type="file" id="image_product" class=" file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0file:text-sm file:font-semibold file:bg-violet-50 file:text-violet-700 hover:file:bg-violet-100 file:cursor-pointer">
+                </div>
+                <div>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/832px-No-Image-Placeholder.svg.png" id="previewImage" class="w-[100px] h-[100px]" >
+                </div>
+                </div>
               
                 <button class="border p-[20px] rounded-[30px] mt-[20px] w-[200px] text-[18px] font-bold text-white bg-blue-400 hover:bg-blue-600 ">Thêm sản phẩm</button> 
               </form>
@@ -28,33 +35,36 @@ const addNewProduct = {
     afterRender() {
       const formAdd = document.querySelector("#add_product");
       const imgProduct = document.querySelector("#image_product");
+      const imgPreview = document.querySelector('#previewImage');
+      
+      imgProduct.addEventListener("change", async (e) => {
+        imgPreview.src = URL.createObjectURL(imgProduct.files[0])
+      });
+      formAdd.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-      imgProduct.addEventListener("change", (e) => {
-        const file = e.target.files[0];
+        const file = imgProduct.files[0];
         const formData = new FormData();
         formData.append("file", file);
         formData.append("upload_preset", "hzeskmhn");
 
-        axios({
+        const { data } = await axios({
           url: "https://api.cloudinary.com/v1_1/dkhutgvlb/image/upload",
           method: "POST",
           headers: {
             "Content-Type": "application/x-www-formendcoded",
           },
           data: formData,
-        }).then((res) => {
-          formAdd.addEventListener("submit", (e) => {
-            e.preventDefault();
-            add({
-              title: document.querySelector("#title_product").value,
-              img: res.data.secure_url,
-              price: document.querySelector("#price_product").value,
-            })
-            .then((result) => console.log(result.data))
-            .catch((error) => console.log(error));
-          });
-        });
+        })
+        add({
+          title: document.querySelector("#title_product").value,
+          img: data.url,
+          price: document.querySelector("#price_product").value,
+        })
+        .then((result) => console.log(result.data))
+        .catch((error) => console.log(error));
       });
+     
     },
 };
 

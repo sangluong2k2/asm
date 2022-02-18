@@ -20,6 +20,23 @@ const print = async (content, id) => {
     if (content.afterRender) content.afterRender(id);
 };
 
+router.on("/admin/*", () => {}, {
+    before(done, match) {
+        if(JSON.parse(localStorage.getItem('user'))){
+            const id = JSON.parse(localStorage.getItem('user')).id;
+            if(id == 1){
+                done();
+            } else {
+                document.location.href="/"
+            }
+        } else {
+            document.location.href="/"
+        }
+      
+      
+    }
+})
+
 router.on ({
     "/": () => print(HomePage),
 

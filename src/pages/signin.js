@@ -38,9 +38,9 @@ const Signin = {
                     toastr.success("Đăng nhập thành công");
                     setTimeout(() => {
                         if(data.user.id === 1) {
-                            document.location.href="/admin/product"
+                            document.location.href="#/"
                         } else {
-                            document.location.href="/"
+                            document.location.href="#/signin"
                         }
                     }, 2000);
                 }
