@@ -31,6 +31,18 @@
       "password": "$2a$10$g5fUXIncniAHcZShgsMYh.jXWSkK2htvIaJKck8ZAtl.t8ntGVv0i",
       "username": "danluong2k2",
       "id": 2
+    },
+    {
+      "email": "sangthuy0601@gmail.com",
+      "password": "$2a$10$jBBy6T2HDILZ8S/21KLuDeK8QejKbKNu5e8Gk8FMH0R9837U1MTfe",
+      "username": "admin",
+      "id": 3
+    },
+    {
+      "email": "sangldph15358@gmail.com",
+      "password": "$2a$10$xzv110J/5Or5FzyEa7mbq.6MAbNrLx06rdiVrcqyKEQEZ4sQ/8i6i",
+      "username": "phuc_kieu",
+      "id": 4
     }
   ],
   "posts": [

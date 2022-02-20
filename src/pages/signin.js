@@ -37,9 +37,9 @@ const Signin = {
                     localStorage.setItem('user', JSON.stringify(data.user));
                     toastr.success("Đăng nhập thành công");
                     setTimeout(() => {
-                        if(data.user.id === 1) {
+                        if(data.user.id) {
                             document.location.href="#/"
-                        } else {
+                        }else {
                             document.location.href="#/signin"
                         }
                     }, 2000);

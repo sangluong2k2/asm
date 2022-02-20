@@ -35,7 +35,7 @@ const SignUp = {
             });
             toastr.success("Đăng ký thành công");
             setTimeout(() => {
-                window.location.href="/#/";
+                window.location.href="/#/signin";
             }, 2000);
         });
     },
