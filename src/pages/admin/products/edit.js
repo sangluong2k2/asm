@@ -35,7 +35,7 @@ const editProduct = {
         const imgPreview = document.querySelector('#previewImage');
         let imgUploadedLink = "";
         
-        imgProduct.addEventListener("change", async (e) => {
+        imgProduct.addEventListener("change",  (e) => {
           imgPreview.src = URL.createObjectURL(imgProduct.files[0])
         });
 

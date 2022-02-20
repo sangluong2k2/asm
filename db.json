@@ -43,6 +43,12 @@
       "password": "$2a$10$xzv110J/5Or5FzyEa7mbq.6MAbNrLx06rdiVrcqyKEQEZ4sQ/8i6i",
       "username": "phuc_kieu",
       "id": 4
+    },
+    {
+      "email": "aaaaaa@gmail.com",
+      "password": "$2a$10$Mku6/luEoi08JG//BVi9HuOq2rQVUkSRxR4bArKEY8nltqyx0QCsu",
+      "username": "aaa",
+      "id": 5
     }
   ],
   "posts": [

@@ -37,7 +37,7 @@ const addNewProduct = {
       const imgProduct = document.querySelector("#image_product");
       const imgPreview = document.querySelector('#previewImage');
       
-      imgProduct.addEventListener("change", async (e) => {
+      imgProduct.addEventListener("change", (e) => {
         imgPreview.src = URL.createObjectURL(imgProduct.files[0])
       });
       formAdd.addEventListener("submit", async (e) => {

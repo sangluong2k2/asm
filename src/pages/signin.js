@@ -33,6 +33,7 @@ const Signin = {
                     email: document.querySelector('#email').value,
                     password: document.querySelector('#password').value
                 });
+                
                 if(data){
                     localStorage.setItem('user', JSON.stringify(data.user));
                     toastr.success("Đăng nhập thành công");
