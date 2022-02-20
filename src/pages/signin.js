@@ -37,15 +37,16 @@ const Signin = {
                     localStorage.setItem('user', JSON.stringify(data.user));
                     toastr.success("Đăng nhập thành công");
                     setTimeout(() => {
-                        if(data.user.id) {
-                            document.location.href="#/"
+                        if(data.user.id === 1) {
+                            document.location.href="#/admin"
                         }else {
-                            document.location.href="#/signin"
+                            document.location.href="#/"
                         }
                     }, 2000);
                 }
             } catch(error) {
                 toastr.error(error.response.data);
+                document.location.href="#/signin"
             }
         });
     },

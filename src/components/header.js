@@ -54,7 +54,6 @@ const Header = {
 
       logout.addEventListener('click', function(){
           localStorage.removeItem('user');
-          reRender(Header,"header");
       })
     },
 };

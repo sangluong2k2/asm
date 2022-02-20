@@ -19,6 +19,9 @@ const HomePage = {
             <div id="products">
                 ${ await Product.render()}
             </div>
+            <div class="w-[1400px] mx-auto border rounded-br-[20px] rounded-tl-[20px] bg-[#57d7ff]">
+            <p class="text-center py-5 font-bold text-[17px] text-white ">TIN TUC</p>
+         </div>
             <div id="news">
                 ${ await Posts.render()}
             </div>
@@ -28,7 +31,7 @@ const HomePage = {
         `;
     },
     aferRender(){
-        Header.render();
+        Header.afterRender();
     }
 };
 

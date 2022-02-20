@@ -53,7 +53,7 @@ router.on ({
     "/signin": () => print(Signin),
 
     // admin
-    "/admin": () => print(adminPage),
+    "/admin": () => {print(adminPage)},
     "/admin/products": () => print(listsAdmin),
     "/admin/products/add": () => print(addNewProduct),
     "/admin/products/:id/edit": ({data}) => print(editProduct, data.id),
