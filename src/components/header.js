@@ -39,7 +39,7 @@ const Header = {
 
       <div class="flex list-none ml-[650px]">
       ${localStorage.getItem('user') ? `
-      <li class="p-[20px] text-white text-[17px] font-bold hover:bg-[#57d7ff]"><a class="block" id="email"> </a></li>
+      <li class="p-[20px] text-white text-[17px] font-bold hover:bg-[#57d7ff]"><a class="block" id="account_email"> </a></li>
       <li class="p-[20px] text-white text-[17px] font-bold hover:bg-[#57d7ff]"><a class="block cursor-pointer" id="logout">Logout</a></li>
   `: ""}
       </div>
@@ -48,7 +48,7 @@ const Header = {
     },
 
     afterRender(){
-      const email = document.querySelector('#email');
+      const email = document.querySelector('#account_email');
       if(email){
         email.innerHTML = JSON.parse(localStorage.getItem('user')).email;
       }
