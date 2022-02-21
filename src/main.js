@@ -1,5 +1,8 @@
 import Navigo from "navigo";
 import adminPage from "./pages/admin/dashboard";
+import addNewPost from "./pages/admin/news/add";
+import editpost from "./pages/admin/news/edit";
+import listsAdminPosts from "./pages/admin/news/lists";
 import addNewProduct from "./pages/admin/products/add";
 import editProduct from "./pages/admin/products/edit";
 import listsAdmin from "./pages/admin/products/lists";
@@ -21,10 +24,10 @@ const print = async (content, id) => {
 };
 
 router.on("/admin/*", () => {}, {
-    before(done, match) {
-        if(JSON.parse(localStorage.getItem('user'))){
-            const id = JSON.parse(localStorage.getItem('user')).id;
-            if(id == 1){
+    before:(done) => {
+        if(localStorage.getItem('user')){
+            const userId = JSON.parse(localStorage.getItem('user')).id;
+            if(userId === 1){
                 done();
             } else {
                 document.location.href="/"
@@ -54,9 +57,14 @@ router.on ({
 
     // admin
     "/admin": () => {print(adminPage)},
+        // sản phẩm
     "/admin/products": () => print(listsAdmin),
     "/admin/products/add": () => print(addNewProduct),
     "/admin/products/:id/edit": ({data}) => print(editProduct, data.id),
+        // bài viết
+    "/admin/posts": () => print(listsAdminPosts),
+    "/admin/posts/add": () => print(addNewPost),
+    "/admin/posts/:id/edit": ({data}) => print(editpost, data.id),
 
     // giỏ hàng
     "/cart": () => print(CartPage)

@@ -49,12 +49,16 @@ const Header = {
 
     afterRender(){
       const email = document.querySelector('#email');
+      if(email){
+        email.innerHTML = JSON.parse(localStorage.getItem('user')).email;
+      }
       const logout = document.querySelector('#logout');
-      email.innerHTML = JSON.parse(localStorage.getItem('user')).email;
-
+     if(logout){
       logout.addEventListener('click', function(){
-          localStorage.removeItem('user');
+        localStorage.removeItem('user');
+        reRender(Header, '#header');
       })
+     } 
     },
 };
 

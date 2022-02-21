@@ -7,7 +7,7 @@ import Product from "../components/product"
 const HomePage = {
     async render() {
         return /*html*/ `
-            <div>
+            <div id="header">
                 ${Header.render()}
             </div>
             <div id="banner">

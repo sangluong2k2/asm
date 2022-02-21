@@ -40,3 +40,4 @@ export const removeItemInCart = (id, next) => {
     localStorage.setItem('cart', JSON.stringify(cart));
     next()
 }
+
